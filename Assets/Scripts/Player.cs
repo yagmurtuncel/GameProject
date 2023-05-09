@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] float speed = 10f;
+    [SerializeField] Animator anim;
+    bool isRunning = false;
     void Start()
     {
         
@@ -14,5 +18,29 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void FixedUpdate()
+    {
+        float h = Input.GetAxis("Horizontal");
+        Mover(h);
+        PlayerRunAnimation(h);
+    }
+
+    void Mover(float h)
+    {
+        rb.velocity = new Vector2(h * speed, rb.velocity.y);
+    }
+    void PlayerRunAnimation(float h)
+    {
+        if (h != 0)
+        {
+            isRunning = true;
+        }
+        else
+        {
+            isRunning = false;
+        }
+        anim.SetBool("isRun", isRunning);
     }
 }
