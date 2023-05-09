@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] Animator anim;
     bool isRunning = false;
     bool facingRight = true;
+
+    public static bool isStart = true;
+
     void Start()
     {
         
@@ -27,6 +30,7 @@ public class Player : MonoBehaviour
         Mover(h);
         PlayerRunAnimation(h);
         PlayerTurn(h);
+        Attack();
     }
 
     void Mover(float h)
@@ -62,4 +66,18 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
+
+    void Attack()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            anim.SetBool("isAttack", true);
+        }
+        else
+        {
+            anim.SetBool("isAttack", false);
+        }
+    }
+
+
 }
