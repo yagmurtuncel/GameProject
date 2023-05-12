@@ -7,7 +7,7 @@ public class isGround : MonoBehaviour
     [SerializeField] LayerMask layer;
     [SerializeField] Rigidbody2D rb;
     public float jumpSpeed = 8f;
-    [SerializeField] bool yerdeMiyiz = true;
+    [SerializeField] bool yerdeMiyiz=true;
     [SerializeField] Animator anim;
     
     void Update()

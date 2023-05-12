@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] Transform detector;
     [SerializeField] Animator anim;
-    [SerializeField] Player player;
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.gameObject.CompareTag("Sword"))
+        {
+            anim.SetTrigger("isDead");
+            Destroy(gameObject,1.5f);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    
+
+
+
+
 }

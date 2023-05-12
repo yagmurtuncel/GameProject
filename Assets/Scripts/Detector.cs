@@ -32,4 +32,6 @@ public class Detector : MonoBehaviour
             anim.SetBool("isAttackk", false);
         }
     }
+
+   
 }

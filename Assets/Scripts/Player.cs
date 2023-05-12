@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -13,15 +14,17 @@ public class Player : MonoBehaviour
 
     public static bool isStart = true;
 
+    [SerializeField] GameObject infoButton;
+
     void Start()
     {
-        
+        infoButton.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Attack();
     }
 
     private void FixedUpdate()
@@ -30,7 +33,7 @@ public class Player : MonoBehaviour
         Mover(h);
         PlayerRunAnimation(h);
         PlayerTurn(h);
-        Attack();
+        
     }
 
     void Mover(float h)
@@ -79,7 +82,39 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Dead(collision);
+    //}
+
+    //private void Dead(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Enemy"))
+    //    {
+    //        anim.SetTrigger("isDead");
+    //        Destroy(gameObject, 2f);
+    //    }
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Books"))
+        {
+            infoButton.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Books"))
+        {
+            infoButton.SetActive(false);
+        }
+    }
+
+
+
+
 
 
 }
