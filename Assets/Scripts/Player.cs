@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -110,6 +112,13 @@ public class Player : MonoBehaviour
         {
             infoButton.SetActive(false);
         }
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Level1");
+        
+        
     }
 
 

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Sword
   - Books
+  - Ladder
   layers:
   - Default
   - TransparentFX
