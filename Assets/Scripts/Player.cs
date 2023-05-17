@@ -104,6 +104,7 @@ public class Player : MonoBehaviour
         {
             infoButton.SetActive(true);
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -117,7 +118,6 @@ public class Player : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Level1");
-        
         
     }
 

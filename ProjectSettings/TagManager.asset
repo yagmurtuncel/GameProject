@@ -9,6 +9,7 @@ TagManager:
   - Sword
   - Books
   - Ladder
+  - Handle
   layers:
   - Default
   - TransparentFX

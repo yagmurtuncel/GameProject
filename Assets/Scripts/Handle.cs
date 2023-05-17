@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Handle : MonoBehaviour
+{
+    [SerializeField] Animator anim;
+
+    private void Update()
+    {
+        
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            anim.SetTrigger("handlePush");
+            anim.SetTrigger("doorOpen");
+        }
+    }
+}
