@@ -13,14 +13,16 @@ public class Player : MonoBehaviour
     [SerializeField] Animator anim;
     bool isRunning = false;
     bool facingRight = true;
+    bool isDoorOpen = false;
 
     public static bool isStart = true;
 
-    [SerializeField] GameObject infoButton;
+    //[SerializeField] GameObject infoButton, triggerPanel, doorPanel;
 
     void Start()
     {
-        infoButton.SetActive(false);
+        //infoButton.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -102,7 +104,18 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Books"))
         {
-            infoButton.SetActive(true);
+           // infoButton.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("Handle"))
+        {
+            //triggerPanel.SetActive(true);
+        }
+        if(collision.CompareTag("Door"))
+        {
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //doorPanel.SetActive(true);
+
         }
 
     }
@@ -111,10 +124,19 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Books"))
         {
-            infoButton.SetActive(false);
+            //infoButton.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Handle"))
+        {
+            //triggerPanel.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            //doorPanel.SetActive(false);
         }
     }
-
+  
+   
     public void PlayGame()
     {
         SceneManager.LoadScene("Level1");

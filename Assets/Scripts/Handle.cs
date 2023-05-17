@@ -5,14 +5,20 @@ using UnityEngine;
 public class Handle : MonoBehaviour
 {
     [SerializeField] Animator anim;
+    [SerializeField] GameObject triggerPanel;
+    
 
+    
     private void Update()
     {
         
         if(Input.GetKeyDown(KeyCode.F))
         {
             anim.SetTrigger("handlePush");
-            anim.SetTrigger("doorOpen");
+            triggerPanel.SetActive(false);
+            
         }
     }
+
+  
 }
