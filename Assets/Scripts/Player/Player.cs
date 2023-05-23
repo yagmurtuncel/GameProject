@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Attack();
+        
     }
 
     private void FixedUpdate()
@@ -69,17 +69,7 @@ public class Player : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    void Attack()
-    {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            anim.SetBool("isAttack", true);
-        }
-        else
-        {
-            anim.SetBool("isAttack", false);
-        }
-    }
+    
 
 
 
