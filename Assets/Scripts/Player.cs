@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     
 
     public static bool isStart = true;
-    private DialogueHolder dialogue;
+    public HealthBar healthBar;
 
     [SerializeField] GameObject infoButton, triggerPanel, doorPanel, howToPlayPanel;
 
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
         }
     }
 
-   
+
 
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
@@ -90,10 +90,9 @@ public class Player : MonoBehaviour
 
     //private void Dead(Collision2D collision)
     //{
-    //    if (collision.gameObject.CompareTag("Enemy"))
+    //    if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Trap"))
     //    {
-    //        anim.SetTrigger("isDead");
-    //        Destroy(gameObject, 2f);
+    //        PlayerHealth.TakeDamage();
     //    }
     //}
 
@@ -117,7 +116,20 @@ public class Player : MonoBehaviour
         }
     }
 
-   
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag=="Trap" || collision.tag=="Enemy")
+        {
+            healthBar.Damage(0.0009f);
+            if(PlayerHealth.totalHealth <=0f)
+            {
+                anim.SetTrigger("isDead");
+                Destroy(gameObject, 2f);
+            }
+        }
+    }
+
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
