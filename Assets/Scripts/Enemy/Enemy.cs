@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        anim.SetTrigger("isHurt");
 
         if(currentHealth <= 0)
         {
@@ -25,7 +26,11 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy Died");
+        anim.SetBool("isDead", true);
+        Destroy(gameObject, 1f);
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+
     }
 
 
