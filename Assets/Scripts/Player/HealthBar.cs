@@ -7,12 +7,14 @@ public class HealthBar : MonoBehaviour
 {
     private RectTransform bar;
     private Image barImage;
-    
+    [SerializeField] Animator anim;
+
     void Start()
     {
         bar = GetComponent<RectTransform>();
         barImage = GetComponent<Image>();
         SetSize(PlayerHealth.totalHealth);
+        
     }
 
     public void Damage(float damage)
@@ -20,6 +22,7 @@ public class HealthBar : MonoBehaviour
         if((PlayerHealth.totalHealth -= damage) >= 0f )
         {
             PlayerHealth.totalHealth -= damage;
+            anim.SetTrigger("isHurt");
         }
         else
         {

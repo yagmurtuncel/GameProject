@@ -113,9 +113,12 @@ public class Player : MonoBehaviour
             healthBar.Damage(0.0009f);
             if(PlayerHealth.totalHealth <=0f)
             {
-                anim.SetTrigger("isDead");
+                anim.SetBool("isDead", true);
                 Destroy(gameObject, 2f);
             }
+            
+
+            
         }
     }
 
