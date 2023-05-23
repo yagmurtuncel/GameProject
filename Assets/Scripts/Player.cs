@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     public static bool isStart = true;
 
-    //[SerializeField] GameObject infoButton, triggerPanel, doorPanel;
+    [SerializeField] GameObject infoButton, triggerPanel, doorPanel, howToPlayPanel;
 
     void Start()
     {
@@ -104,19 +104,21 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Books"))
         {
-           // infoButton.SetActive(true);
+           infoButton.SetActive(true);
         }
         if (collision.gameObject.CompareTag("Handle"))
         {
-            //triggerPanel.SetActive(true);
+            triggerPanel.SetActive(true);
         }
-        if(collision.CompareTag("Door"))
+        if(collision.gameObject.CompareTag("Door"))
         {
-
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //doorPanel.SetActive(true);
-
         }
+        if (collision.gameObject.CompareTag("Trigger"))
+        {
+            howToPlayPanel.SetActive(true);
+        }
+
 
     }
 
@@ -124,15 +126,15 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Books"))
         {
-            //infoButton.SetActive(false);
+            infoButton.SetActive(false);
         }
         if (collision.gameObject.CompareTag("Handle"))
         {
-            //triggerPanel.SetActive(false);
+            triggerPanel.SetActive(false);
         }
-        if (collision.gameObject.CompareTag("Door"))
+        if (collision.gameObject.CompareTag("Trigger"))
         {
-            //doorPanel.SetActive(false);
+            howToPlayPanel.SetActive(false);
         }
     }
   

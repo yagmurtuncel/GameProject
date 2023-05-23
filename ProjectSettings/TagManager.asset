@@ -12,6 +12,7 @@ TagManager:
   - Handle
   - Door
   - Trap
+  - Trigger
   layers:
   - Default
   - TransparentFX
