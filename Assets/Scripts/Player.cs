@@ -1,3 +1,4 @@
+using DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -13,19 +14,13 @@ public class Player : MonoBehaviour
     [SerializeField] Animator anim;
     bool isRunning = false;
     bool facingRight = true;
-    bool isDoorOpen = false;
+    
 
     public static bool isStart = true;
+    private DialogueHolder dialogue;
 
     [SerializeField] GameObject infoButton, triggerPanel, doorPanel, howToPlayPanel;
 
-    void Start()
-    {
-        //infoButton.SetActive(false);
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Attack();
@@ -86,6 +81,8 @@ public class Player : MonoBehaviour
         }
     }
 
+   
+
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
     //    Dead(collision);
@@ -118,9 +115,9 @@ public class Player : MonoBehaviour
         {
             howToPlayPanel.SetActive(true);
         }
-
-
     }
+
+   
 
     private void OnTriggerExit2D(Collider2D collision)
     {

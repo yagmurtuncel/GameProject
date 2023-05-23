@@ -6,11 +6,15 @@ namespace DialogueSystem
 {
     public class DialogueHolder : MonoBehaviour
     {
+        
         private void Awake()
         {
             StartCoroutine(dialogueSequence());
         }
-        private IEnumerator dialogueSequence()
+
+
+
+        public IEnumerator dialogueSequence()
         {
             for (int i = 0; i < transform.childCount; i++)
             {

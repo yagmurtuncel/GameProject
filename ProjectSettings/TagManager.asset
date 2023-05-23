@@ -13,6 +13,7 @@ TagManager:
   - Door
   - Trap
   - Trigger
+  - NPC
   layers:
   - Default
   - TransparentFX
