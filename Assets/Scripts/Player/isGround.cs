@@ -13,7 +13,7 @@ public class isGround : MonoBehaviour
     void Update()
     {
         
-        RaycastHit2D carpiyorMu = Physics2D.Raycast(transform.position, Vector2.down, 0.1f, layer);
+        RaycastHit2D carpiyorMu = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, layer);
 
         if (carpiyorMu)
         {

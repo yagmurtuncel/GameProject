@@ -73,18 +73,7 @@ public class Player : MonoBehaviour
 
 
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    Dead(collision);
-    //}
-
-    //private void Dead(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Trap"))
-    //    {
-    //        PlayerHealth.TakeDamage();
-    //    }
-    //}
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
