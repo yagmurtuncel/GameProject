@@ -14,6 +14,7 @@ TagManager:
   - Trap
   - Trigger
   - NPC
+  - FireTrap
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,7 @@ public class Detector : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             anim.SetBool("isAttackk", true);
+            
         }
       
     }

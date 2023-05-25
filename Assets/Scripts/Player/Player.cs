@@ -68,13 +68,6 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-
-    
-
-
-
-   
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Books"))
@@ -93,24 +86,30 @@ public class Player : MonoBehaviour
         {
             howToPlayPanel.SetActive(true);
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.tag=="Trap" || collision.tag=="Enemy")
+        if (collision.tag == "Trap")
         {
             healthBar.Damage(0.0009f);
-            if(PlayerHealth.totalHealth <=0f)
+            if (PlayerHealth.totalHealth <= 0f)
             {
                 anim.SetBool("isDead", true);
                 Destroy(gameObject, 2f);
             }
-            
-
-            
         }
+
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy" || collision.tag == "FireTrap")
+        {
+            healthBar.Damage(0.0009f);
+            if (PlayerHealth.totalHealth <= 0f)
+            {
+                anim.SetBool("isDead", true);
+                Destroy(gameObject, 2f);
+            }
+        }
+    }
 
 
     private void OnTriggerExit2D(Collider2D collision)
