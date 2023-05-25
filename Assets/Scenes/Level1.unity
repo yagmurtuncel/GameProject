@@ -182,7 +182,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 160ab81351d98e743a5af2a218b7e4db, type: 3}
+    m_Font: {fileID: 12800000, guid: f2576ccdbbf86a34aaddb73fd290c213, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kapiyi acmak icin kolu indirin.
+  m_Text: "Kap\u0131y\u0131 a\xE7mak i\xE7in kolu indirin."
 --- !u!222 &12307161
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1124,7 +1124,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 160ab81351d98e743a5af2a218b7e4db, type: 3}
+    m_Font: {fileID: 12800000, guid: f2576ccdbbf86a34aaddb73fd290c213, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1136,7 +1136,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lutfen F tusuna basiniz
+  m_Text: "L\xFCtfen F tu\u015Funa bas\u0131n\u0131z."
 --- !u!222 &216245728
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2048,8 +2048,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: -87}
-  m_SizeDelta: {x: 205.0407, y: 64.8701}
+  m_AnchoredPosition: {x: 27.1103, y: -87}
+  m_SizeDelta: {x: 313.6425, y: 64.8701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515575313
 MonoBehaviour:
@@ -2608,7 +2608,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 386ef3d1f605fed4a9f3d9d0386de63b, type: 3}
+    m_Font: {fileID: 12800000, guid: f2576ccdbbf86a34aaddb73fd290c213, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -4942,7 +4942,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 386ef3d1f605fed4a9f3d9d0386de63b, type: 3}
+    m_Font: {fileID: 12800000, guid: f2576ccdbbf86a34aaddb73fd290c213, type: 3}
     m_FontSize: 14
     m_FontStyle: 3
     m_BestFit: 1
@@ -4954,8 +4954,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Nasil Oynanir?\n\nHareket : wasd/Y\xF6n Tuslari\nZiplama : Space\nAttack
-    : E tusu\nEtkilesime gecme: F tusu\n"
+  m_Text: "Nas\u0131l Oynan\u0131r?\n\nHareket : wasd/Y\xF6n Tu\u015Flar\u0131\nZ\u0131plama
+    : Space\nAttack : E tusu\nEtkile\u015Fime ge\xE7me: F tu\u015Fu\n"
 --- !u!222 &1557013778
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5637,7 +5637,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 386ef3d1f605fed4a9f3d9d0386de63b, type: 3}
+    m_Font: {fileID: 12800000, guid: f2576ccdbbf86a34aaddb73fd290c213, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -5649,7 +5649,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tap To Read
+  m_Text: "Okumak i\xE7in t\u0131klay\u0131n"
 --- !u!222 &1843800341
 CanvasRenderer:
   m_ObjectHideFlags: 0

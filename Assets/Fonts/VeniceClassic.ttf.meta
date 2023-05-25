@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 386ef3d1f605fed4a9f3d9d0386de63b
+guid: f2576ccdbbf86a34aaddb73fd290c213
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Cardinal
+  - Venice Classic
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
