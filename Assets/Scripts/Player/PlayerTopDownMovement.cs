@@ -14,11 +14,8 @@ public class PlayerTopDownMovement : MonoBehaviour
     private Vector2 moveDirection;
 
     public HealthBar healthBar;
+    public GameObject lastPanel;
 
-    void Update()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
@@ -68,6 +65,14 @@ public class PlayerTopDownMovement : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("FinalChest"))
+        {
+            lastPanel.SetActive(true);
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

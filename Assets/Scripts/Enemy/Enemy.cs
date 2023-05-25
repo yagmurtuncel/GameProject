@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] Animator anim;
+    [SerializeField] GameObject lootDrop;
     public int maxHealth =100;
     int currentHealth;
    
@@ -13,6 +14,11 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+    }
+
+    private void Update()
+    {
+        
     }
 
 
@@ -25,14 +31,16 @@ public class Enemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             Die();
+            Instantiate(lootDrop, transform.position, Quaternion.identity);
         }
     }
 
     void Die()
     {
         anim.SetBool("isDead", true);
-        Destroy(gameObject, 1f);
-
+        Destroy(gameObject);
+        
+        
     }
 
 

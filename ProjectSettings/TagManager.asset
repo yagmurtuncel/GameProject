@@ -15,6 +15,7 @@ TagManager:
   - Trigger
   - NPC
   - FireTrap
+  - FinalChest
   layers:
   - Default
   - TransparentFX

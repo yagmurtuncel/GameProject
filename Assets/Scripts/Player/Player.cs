@@ -95,6 +95,7 @@ public class Player : MonoBehaviour
                 Destroy(gameObject, 2f);
             }
         }
+        
 
     }
 
