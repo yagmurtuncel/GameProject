@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
 
     [SerializeField] GameObject infoButton, triggerPanel, doorPanel, howToPlayPanel, gameoverPanel;
+    [SerializeField] AudioSource deathSound;
 
     void Update()
     {
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
         {
             isRunning = false;
         }
+        
         anim.SetBool("isRun", isRunning);
     }
     void PlayerTurn(float h)
@@ -107,9 +109,11 @@ public class Player : MonoBehaviour
             healthBar.Damage(0.0009f);
             if (PlayerHealth.totalHealth <= 0f)
             {
+                
                 anim.SetBool("isDead", true);
+                deathSound.Play();
                 gameoverPanel.SetActive(true);
-                Destroy(gameObject, 1f);
+                Destroy(gameObject, 2f);
             }
         }
     }
@@ -135,6 +139,7 @@ public class Player : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Level1");
+        PlayerHealth.totalHealth = 1f;
         
     }
 

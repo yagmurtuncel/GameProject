@@ -8,6 +8,7 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 2f;
     public LayerMask enemyLayers;
+    [SerializeField] AudioSource swordSound;
 
     public int attackDamage = 20;
 
@@ -21,6 +22,7 @@ public class PlayerCombat : MonoBehaviour
     }
     void Attack()
     {
+        swordSound.Play();
         anim.SetTrigger("isAttack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

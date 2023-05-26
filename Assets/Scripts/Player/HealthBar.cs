@@ -9,6 +9,7 @@ public class HealthBar : MonoBehaviour
     private Image barImage;
     public float healthAmount = 1.0f;
     [SerializeField] Animator anim;
+    [SerializeField] AudioSource hurtSound;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class HealthBar : MonoBehaviour
         if((PlayerHealth.totalHealth -= damage) >= 0f )
         {
             PlayerHealth.totalHealth -= damage;
+            hurtSound.Play();
             anim.SetTrigger("isHurt");
         }
         else

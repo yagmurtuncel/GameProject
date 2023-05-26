@@ -14,7 +14,7 @@ public class PlayerTopDownMovement : MonoBehaviour
     private Vector2 moveDirection;
 
     public HealthBar healthBar;
-    public GameObject lastPanel;
+    public GameObject lastPanel, gameOverPanel;
 
 
     private void FixedUpdate()

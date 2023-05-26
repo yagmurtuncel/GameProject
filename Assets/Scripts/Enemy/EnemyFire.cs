@@ -10,7 +10,7 @@ public class EnemyFire : MonoBehaviour
 
     public float force;
     private float timer;
-    private HealthBar healthBar;
+    
 
     void Start()
     {

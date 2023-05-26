@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
         Player.isStart = true;
     }
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
+        PlayerHealth.totalHealth = PlayerPrefs.GetInt("health");
+    }
     public void QuitGame()
     {
         Application.Quit();
