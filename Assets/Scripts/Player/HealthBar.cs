@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     private RectTransform bar;
     private Image barImage;
+    public float healthAmount = 1.0f;
     [SerializeField] Animator anim;
 
     void Start()
@@ -38,7 +39,6 @@ public class HealthBar : MonoBehaviour
             barImage.color = Color.red;
         }
      
-
         SetSize(PlayerHealth.totalHealth);
     }
 

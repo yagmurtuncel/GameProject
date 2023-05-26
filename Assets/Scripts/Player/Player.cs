@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public static bool isStart = true;
     public HealthBar healthBar;
 
-    [SerializeField] GameObject infoButton, triggerPanel, doorPanel, howToPlayPanel;
+    [SerializeField] GameObject infoButton, triggerPanel, doorPanel, howToPlayPanel, gameoverPanel;
 
     void Update()
     {
@@ -92,7 +92,8 @@ public class Player : MonoBehaviour
             if (PlayerHealth.totalHealth <= 0f)
             {
                 anim.SetBool("isDead", true);
-                Destroy(gameObject, 2f);
+                gameoverPanel.SetActive(true);
+                Destroy(gameObject, 1f);
             }
         }
         
@@ -107,7 +108,8 @@ public class Player : MonoBehaviour
             if (PlayerHealth.totalHealth <= 0f)
             {
                 anim.SetBool("isDead", true);
-                Destroy(gameObject, 2f);
+                gameoverPanel.SetActive(true);
+                Destroy(gameObject, 1f);
             }
         }
     }
