@@ -473,7 +473,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2452044270353139880, guid: ee91c8c0f589b44409ae9c632b7eb225, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3054,7 +3054,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2452044270353139880, guid: ee91c8c0f589b44409ae9c632b7eb225, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6989,7 +6989,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ff1403e731ad17a46aba1f1916680b27, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -8105,11 +8105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5806659366593106994, guid: 44ce1689324425048a8b00334fa483f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5806659366593106994, guid: 44ce1689324425048a8b00334fa483f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.54
+      value: -4.26
       objectReference: {fileID: 0}
     - target: {fileID: 5806659366593106994, guid: 44ce1689324425048a8b00334fa483f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11165,7 +11165,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2452044270353139880, guid: ee91c8c0f589b44409ae9c632b7eb225, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

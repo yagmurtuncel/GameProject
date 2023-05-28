@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     }
     public void BackMenuButton()
     {
+        PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.SetInt("health", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Menu");
     }
     public void RestartGame()
@@ -26,15 +28,14 @@ public class GameManager : MonoBehaviour
     public void ContinueGame()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
+        SceneManager.LoadScene(PlayerPrefs.GetInt("health"));
         Player.isStart = true;
     }
-    public void SaveGame()
-    {
-        PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
-        PlayerHealth.totalHealth = PlayerPrefs.GetInt("health");
-    }
+   
     public void QuitGame()
     {
+        PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.SetInt("health", SceneManager.GetActiveScene().buildIndex);
         Application.Quit();
     }
 }
