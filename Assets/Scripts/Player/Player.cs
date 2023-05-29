@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] float speed = 10f;
+    [SerializeField] float speed;
     [SerializeField] Animator anim;
     bool isRunning = false;
     bool facingRight = true;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public static bool isStart = true;
     public HealthBar healthBar;
 
-    [SerializeField] GameObject infoButton, triggerPanel, doorPanel, howToPlayPanel, gameoverPanel;
+    [SerializeField] GameObject infoButton, triggerPanel, howToPlayPanel, gameoverPanel;
     [SerializeField] AudioSource deathSound;
 
     void Update()
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
+        float h = Input.GetAxisRaw("Horizontal");
         Mover(h);
         PlayerRunAnimation(h);
         PlayerTurn(h);
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     void Mover(float h)
     {
-        rb.velocity = new Vector2(h * speed, rb.velocity.y);
+        rb.velocity=new Vector2(h*speed*Time.deltaTime, rb.velocity.y);
     }
     void PlayerRunAnimation(float h)
     {
@@ -80,10 +80,11 @@ public class Player : MonoBehaviour
         {
             triggerPanel.SetActive(true);
         }
-        //if(collision.gameObject.CompareTag("Door"))
-        //{
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //}
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            anim.SetTrigger("doorOpen");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
         if (collision.gameObject.CompareTag("Trigger"))
         {
             howToPlayPanel.SetActive(true);
@@ -98,6 +99,11 @@ public class Player : MonoBehaviour
                 gameoverPanel.SetActive(true);
                 Destroy(gameObject, 1f);
             }
+        }
+        if(collision.tag == "Heal")
+        {
+            healthBar.Heal(0.05f);
+            Destroy(collision.gameObject,1f);
         }
         
 

@@ -13,9 +13,9 @@ TagManager:
   - Door
   - Trap
   - Trigger
-  - NPC
   - FireTrap
   - FinalChest
+  - Heal
   layers:
   - Default
   - TransparentFX

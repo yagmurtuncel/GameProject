@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,5 +50,22 @@ public class HealthBar : MonoBehaviour
         bar.localScale = new Vector3(size, 1f);
     }
 
-    
+    public void Heal(float heal)
+    {
+        if((PlayerHealth.totalHealth += heal) <1f ) 
+        {
+            PlayerHealth.totalHealth += heal;
+        }
+        if (PlayerHealth.totalHealth > 0.3f)
+        {
+            barImage.color = Color.yellow;
+        }if (PlayerHealth.totalHealth > 0.5f)
+        {
+            barImage.color = Color.green;
+        }
+        
+
+        SetSize(PlayerHealth.totalHealth);
+
+    }
 }

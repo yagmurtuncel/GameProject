@@ -7,11 +7,9 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     [SerializeField] Animator anim;
-    public static bool doorOpen = false;
-    // Start is called before the first frame update
+    [SerializeField] GameObject doorInfoPanel;
+    public static bool doorOpen =false;
    
-
-    // Update is called once per frame
     void Update()
     {
         if (Handle.handlePush)
@@ -26,6 +24,17 @@ public class Door : MonoBehaviour
         if(doorOpen)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            doorInfoPanel.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(!doorOpen)
+        {
+            doorInfoPanel.SetActive(false);
         }
     }
 
