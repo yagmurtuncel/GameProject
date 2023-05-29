@@ -15,6 +15,7 @@ public class PlayerTopDownMovement : MonoBehaviour
 
     public HealthBar healthBar;
     public GameObject lastPanel, gameOverPanel;
+    public AudioSource deathSound;
 
 
     private void FixedUpdate()
@@ -82,6 +83,7 @@ public class PlayerTopDownMovement : MonoBehaviour
             if (PlayerHealth.totalHealth <= 0f)
             {
                 anim.SetBool("isDead", true);
+                deathSound.Play();
                 Destroy(gameObject, 2f);
             }
 

@@ -80,10 +80,10 @@ public class Player : MonoBehaviour
         {
             triggerPanel.SetActive(true);
         }
-        if(collision.gameObject.CompareTag("Door"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        //if(collision.gameObject.CompareTag("Door"))
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //}
         if (collision.gameObject.CompareTag("Trigger"))
         {
             howToPlayPanel.SetActive(true);
@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
             if (PlayerHealth.totalHealth <= 0f)
             {
                 anim.SetBool("isDead", true);
+                deathSound.Play();
                 gameoverPanel.SetActive(true);
                 Destroy(gameObject, 1f);
             }
