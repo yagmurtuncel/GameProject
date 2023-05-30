@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 829511462582235571}
   - component: {fileID: 3494477293417527988}
   - component: {fileID: -3146510245969615052}
-  - component: {fileID: -3113673072962409264}
+  - component: {fileID: 8688463195157660423}
   m_Layer: 0
   m_Name: IS - Arrow 568
   m_TagString: Trap
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38dc82d89995c9044a039a28f6188ba8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.68, y: 0.36}
   m_EdgeRadius: 0
---- !u!114 &-3113673072962409264
+--- !u!114 &8688463195157660423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 829511462582235570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970b286d5d5fa2442a93948b0985f33b, type: 3}
+  m_Script: {fileID: 11500000, guid: 977047107ed55b84ab403ec684eb7819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   force: 4
