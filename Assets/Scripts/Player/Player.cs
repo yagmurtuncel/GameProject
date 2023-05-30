@@ -145,7 +145,7 @@ public class Player : MonoBehaviour
    
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("FirstScene");
         PlayerHealth.totalHealth = 1f;
         
     }
