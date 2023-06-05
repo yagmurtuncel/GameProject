@@ -84,6 +84,7 @@ public class PlayerTopDownMovement : MonoBehaviour
             {
                 anim.SetBool("isDead", true);
                 deathSound.Play();
+                gameOverPanel.SetActive(true);
                 Destroy(gameObject, 2f);
             }
 

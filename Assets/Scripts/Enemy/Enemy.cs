@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         anim.SetBool("isDead", true);
-        Destroy(gameObject,2f);
+        Destroy(gameObject,1f);
         
         
     }
