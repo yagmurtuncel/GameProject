@@ -1,9 +1,5 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-using UnityEngine.UI;
-
 public class Player : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
@@ -11,7 +7,6 @@ public class Player : MonoBehaviour
     [SerializeField] Animator anim;
     bool isRunning = false;
     bool facingRight = true;
-    
 
     public static bool isStart = true;
     public HealthBar healthBar;
@@ -19,24 +14,20 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject infoButton, triggerPanel, howToPlayPanel, gameoverPanel;
     [SerializeField] AudioSource deathSound;
 
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
         Mover(h);
         PlayerRunAnimation(h);
         PlayerTurn(h);
-        
     }
-
+    #region Move
     void Mover(float h)
     {
         rb.velocity=new Vector2(h*speed*Time.deltaTime, rb.velocity.y);
     }
+    #endregion
+    #region Run Animation
     void PlayerRunAnimation(float h)
     {
         if (h != 0)
@@ -47,12 +38,12 @@ public class Player : MonoBehaviour
         {
             isRunning = false;
         }
-        
         anim.SetBool("isRun", isRunning);
     }
+    #endregion
+    #region Flip
     void PlayerTurn(float h)
     {
-
         if (h > 0 && !facingRight)
         {
             Flip();
@@ -67,6 +58,8 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
+    #endregion
+    #region TriggerEnter
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Books"))
@@ -102,10 +95,9 @@ public class Player : MonoBehaviour
             healthBar.Heal(0.05f);
             Destroy(collision.gameObject,1f);
         }
-        
-
     }
-
+    #endregion
+    #region TriggerStay
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Enemy" || collision.tag == "FireTrap")
@@ -113,7 +105,6 @@ public class Player : MonoBehaviour
             healthBar.Damage(0.0009f);
             if (PlayerHealth.totalHealth <= 0f)
             {
-                
                 anim.SetBool("isDead", true);
                 deathSound.Play();
                 gameoverPanel.SetActive(true);
@@ -121,8 +112,8 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-
+    #endregion
+    #region TriggerExit
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Books"))
@@ -138,18 +129,12 @@ public class Player : MonoBehaviour
             howToPlayPanel.SetActive(false);
         }
     }
-  
-   
+    #endregion
+    #region PlayButton
     public void PlayGame()
     {
         SceneManager.LoadScene("FirstScene");
         PlayerHealth.totalHealth = 1f;
-        
     }
-
-
-
-
-
-
-}
+    #endregion
+}//class

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LadderMovement : MonoBehaviour
@@ -10,8 +8,6 @@ public class LadderMovement : MonoBehaviour
     bool isClimbing;
 
     [SerializeField] Rigidbody2D rb;
-
-    // Update is called once per frame
     void Update()
     {
         vertical = Input.GetAxis("Vertical");
@@ -50,4 +46,4 @@ public class LadderMovement : MonoBehaviour
             isClimbing = false;
         }
     }
-}
+}//class

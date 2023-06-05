@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AIChase : MonoBehaviour
@@ -10,12 +8,6 @@ public class AIChase : MonoBehaviour
     private float distance;
 
     [SerializeField] Animator anim;
-    void Start()
-    {
-        
-    }
-   
-
     void Update()
     {
         distance=Vector2.Distance(transform.position, player.transform.position);
@@ -27,7 +19,5 @@ public class AIChase : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             anim.SetBool("isMove", true);
         }
-
     }
-    
-}
+}//class

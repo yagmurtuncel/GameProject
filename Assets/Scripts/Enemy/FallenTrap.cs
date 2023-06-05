@@ -14,4 +14,4 @@ public class FallenTrap : MonoBehaviour
             Destroy(gameObject,0.25f);
         }
     }
-}
+}//class

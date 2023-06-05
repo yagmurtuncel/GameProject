@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
@@ -12,7 +10,6 @@ public class PlayerCombat : MonoBehaviour
 
     public int attackDamage = 20;
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -20,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
             Attack();
         }
     }
+    #region Attack
     void Attack()
     {
         swordSound.Play();
@@ -31,7 +29,8 @@ public class PlayerCombat : MonoBehaviour
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
-
+    #endregion
+    #region SwordGizmos
     private void OnDrawGizmosSelected()
     {
         if(attackPoint == null)
@@ -40,4 +39,5 @@ public class PlayerCombat : MonoBehaviour
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-}
+    #endregion
+}//class

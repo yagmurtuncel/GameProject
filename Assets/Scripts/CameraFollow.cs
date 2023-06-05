@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -14,6 +12,4 @@ public class CameraFollow : MonoBehaviour
         NewCameraPos= new Vector3 (target.position.x,target.position.y + height,transform.position.z);
         transform.position = Vector3.Lerp(transform.position,NewCameraPos, followSpeed * Time.deltaTime);
     }
-
-
-}
+}//class

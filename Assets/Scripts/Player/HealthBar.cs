@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,9 +14,8 @@ public class HealthBar : MonoBehaviour
         bar = GetComponent<RectTransform>();
         barImage = GetComponent<Image>();
         SetSize(PlayerHealth.totalHealth);
-        
     }
-
+    #region Damage
     public void Damage(float damage)
     {
         if((PlayerHealth.totalHealth -= damage) >= 0f )
@@ -41,15 +37,14 @@ public class HealthBar : MonoBehaviour
         {
             barImage.color = Color.red;
         }
-     
         SetSize(PlayerHealth.totalHealth);
     }
-
+    #endregion
     public void SetSize(float size)
     {
         bar.localScale = new Vector3(size, 1f);
     }
-
+    #region Heal
     public void Heal(float heal)
     {
         if((PlayerHealth.totalHealth += heal) <1f ) 
@@ -63,9 +58,7 @@ public class HealthBar : MonoBehaviour
         {
             barImage.color = Color.green;
         }
-        
-
         SetSize(PlayerHealth.totalHealth);
-
     }
-}
+    #endregion
+}//class

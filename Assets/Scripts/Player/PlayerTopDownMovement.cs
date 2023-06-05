@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerTopDownMovement : MonoBehaviour
 {
@@ -17,7 +14,6 @@ public class PlayerTopDownMovement : MonoBehaviour
     public GameObject lastPanel, gameOverPanel;
     public AudioSource deathSound;
 
-
     private void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -29,15 +25,13 @@ public class PlayerTopDownMovement : MonoBehaviour
         PlayerRunAnimation(h);
         PlayerTurn(h);
     }
-
-
-  
-
+    #region Move
     private void Move()
     {
         rb.velocity=new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
-
+    #endregion
+    #region RunAnimation
     void PlayerRunAnimation(float h)
     {
         if (h != 0)
@@ -50,6 +44,8 @@ public class PlayerTopDownMovement : MonoBehaviour
         }
         anim.SetBool("isRun", isRunning);
     }
+    #endregion
+    #region Flip
     void PlayerTurn(float h)
     {
 
@@ -67,7 +63,8 @@ public class PlayerTopDownMovement : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-
+    #endregion
+    #region TriggerEnter
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("FinalChest"))
@@ -75,6 +72,8 @@ public class PlayerTopDownMovement : MonoBehaviour
             lastPanel.SetActive(true);
         }
     }
+    #endregion
+    #region TriggerStay
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Trap" || collision.tag == "Enemy")
@@ -87,9 +86,7 @@ public class PlayerTopDownMovement : MonoBehaviour
                 gameOverPanel.SetActive(true);
                 Destroy(gameObject, 2f);
             }
-
-
-
         }
     }
-}
+    #endregion
+}//class

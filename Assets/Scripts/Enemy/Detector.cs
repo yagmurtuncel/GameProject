@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Detector : MonoBehaviour
 {
-
     [SerializeField] Animator anim;
    
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,9 +9,7 @@ public class Detector : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             anim.SetBool("isAttackk", true);
-            
         }
-      
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -23,6 +18,4 @@ public class Detector : MonoBehaviour
             anim.SetBool("isAttackk", false);
         }
     }
-
-   
-}
+}//class

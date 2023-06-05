@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Handle : MonoBehaviour
 {
-    
     [SerializeField] Animator anim;
     [SerializeField] GameObject triggerPanel;
 
@@ -13,8 +9,6 @@ public class Handle : MonoBehaviour
     private void Update()
     {
         OpenDoor();
-       
-       
     }
     public void OpenDoor()
     {
@@ -25,6 +19,4 @@ public class Handle : MonoBehaviour
             triggerPanel.SetActive(false);
         }
     }
-
-
-}
+}//class

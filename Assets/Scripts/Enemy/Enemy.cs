@@ -1,30 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] GameObject lootDrop;
-    public int maxHealth =100;
+    public int maxHealth = 100;
     int currentHealth;
-   
-
-
     private void Start()
     {
         currentHealth = maxHealth;
     }
-
-    private void Update()
-    {
-        
-    }
-
-
+    #region Damage
     public void TakeDamage(int damage)
     {
-        
         currentHealth -= damage;
         anim.SetTrigger("isHurt");
 
@@ -34,18 +22,13 @@ public class Enemy : MonoBehaviour
             Instantiate(lootDrop, transform.position, Quaternion.identity);
         }
     }
-
+    #endregion
+    #region Die
     void Die()
     {
         anim.SetBool("isDead", true);
         Destroy(gameObject,1f);
-        
-        
     }
+    #endregion
 
-
-
-
-
-
-}
+}//class

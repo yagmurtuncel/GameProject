@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Chest : MonoBehaviour
@@ -15,4 +13,4 @@ public class Chest : MonoBehaviour
             Instantiate(lootDrop, transform.position, Quaternion.identity);
         }
     }
-}
+}//class

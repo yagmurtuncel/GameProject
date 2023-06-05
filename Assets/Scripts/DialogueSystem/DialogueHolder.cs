@@ -1,18 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DialogueSystem
 {
     public class DialogueHolder : MonoBehaviour
     {
-        
         private void Awake()
         {
             StartCoroutine(dialogueSequence());
         }
-
-
 
         public IEnumerator dialogueSequence()
         {
@@ -33,6 +29,6 @@ namespace DialogueSystem
             }
         }
     }
-}
+}//class
 
 

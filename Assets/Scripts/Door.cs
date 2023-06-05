@@ -34,5 +34,4 @@ public class Door : MonoBehaviour
             doorInfoPanel.SetActive(false);
         }
     }
-
-}
+}//class
