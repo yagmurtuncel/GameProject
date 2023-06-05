@@ -323,7 +323,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Kim oldu\u011Fu ve nereden geldi\u011Fi bilinmeyen bir b\xFCy\xFCc\xFC,
-    buntan tam 20 y\u0131l \xF6nce Rhydon'a sald\u0131rm\u0131\u015Ft\u0131."
+    bundan tam 20 y\u0131l \xF6nce Rhydon'a sald\u0131rm\u0131\u015Ft\u0131."
 --- !u!222 &887270630
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -4325,7 +4325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc705cf58202a24b982ce169210eef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: "Neler sa\xE7mal\u0131yorsun sen? 5 krall\u0131k babama son derece sad\u0131kt\u0131."
+  input: "Neler sa\xE7mal\u0131yorsun sen? Be\u015F Krall\u0131k babama son derece
+    sad\u0131kt\u0131."
   textColor: {r: 0, g: 0, b: 0, a: 1}
   textFont: {fileID: 12800000, guid: f2576ccdbbf86a34aaddb73fd290c213, type: 3}
   delay: 0.1
@@ -6334,7 +6335,7 @@ MonoBehaviour:
   input: "Ne demek amcan\u0131m?"
   textColor: {r: 0, g: 0, b: 0, a: 1}
   textFont: {fileID: 12800000, guid: f2576ccdbbf86a34aaddb73fd290c213, type: 3}
-  delay: 0.3
+  delay: 0.1
   delayBetweenLines: 2
   sound: {fileID: 8300000, guid: 82573564929a7d841b10bc7c184d2f21, type: 3}
   characterSprite: {fileID: 21300000, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
